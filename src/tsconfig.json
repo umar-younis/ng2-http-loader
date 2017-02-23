@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "outDir": "../lib",
+    "sourceMap": false,
+    "inlineSources": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmitHelpers": false,
+    "noImplicitAny": false,
+    "declaration": true,
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "lib": ["dom", "es6"],
+    "types": [
+      "jasmine"
+    ],
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
+  },
+  "files": [
+    "../scripts/typings.d.ts",
+    "./ng2-request-progress.ts"
+  ]
+}
