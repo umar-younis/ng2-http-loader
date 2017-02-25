@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
-import { Ng2RequestProgressrModule } from './index';
+import { Ng2HttpLoaderModule } from './index';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { Ng2RequestProgressrModule } from './index';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Ng2RequestProgressrModule
+    Ng2HttpLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,11 +11,22 @@ Follow me [![twitter](https://img.shields.io/twitter/follow/babarxm.svg?style=so
   - `prop/method` description.
 
 ## Configuration
+### Step 1
     import { Ng2HttpLoaderModule } from "ng2-http-loader";
     @NgModule({
-      imports: [ Ng2RequestProgressModule ]
+      imports: [ Ng2HttpLoaderModule ]
     })
     export class AppModule { }
+
+### Step 2
+    @Component({
+      selector: 'app-demo',
+      templateUrl: '<ng2-http-loader></ng2-http-loader>'
+    })
+
+    export class DemoComponent{
+      constructor(): void { }
+    }
 
 ## TODO
   - Demo 

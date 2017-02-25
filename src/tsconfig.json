@@ -25,6 +25,6 @@
   },
   "files": [
     "../scripts/typings.d.ts",
-    "./ng2-request-progress.ts"
+    "./ng2-http-loader.ts"
   ]
 }
