@@ -1,24 +1,24 @@
 {
-  "name": "ng2-request-progress",
+  "name": "ng2-http-loader",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
   "author": "Babar Bilal <babarxm2@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:babarxm/ng2-upload.git"
+    "url": "git+ssh://git@github.com:babarxm/ng2-http-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/babarxm/ng2-upload/issues"
+    "url": "https://github.com/babarxm/ng2-http-loader/issues"
   },
   "peerDependencies": {
     "@angular/common": "*",
     "@angular/core": "*"
   },
-  "homepage": "https://github.com/babarxm/ng2-upload#readme",
+  "homepage": "https://github.com/babarxm/ng2-http-loader#readme",
   "keywords": [
-    "angular2-request-progress",
-    "ng2-progress-bar",
+    "angular2-http-loader",
+    "ng2-loader",
     "ng2-progressbar"
   ],
   "contributors": [

@@ -6,4 +6,4 @@ import { NgModule } from '@angular/core';
   declarations: [],
   providers: []
 })
-export class Ng2RequestProgressrModule { }
+export class Ng2HttpLoaderModule { }

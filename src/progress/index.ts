@@ -1,1 +1,1 @@
-export { Ng2RequestProgressrModule } from './ng2-request-progress.module';
+export { Ng2HttpLoaderModule } from './ng2-http-loader.module';
