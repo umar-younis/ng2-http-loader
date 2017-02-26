@@ -38,7 +38,7 @@ import { Subscription } from 'rxjs/Subscription';
     }
     .ng2-end-loader{
       animation: ng2-anim2;
-      animation-duration: 4s;
+      animation-duration: 3s;
     }
   `]
 })
@@ -90,6 +90,6 @@ export class Ng2HttpLoaderComponent implements OnInit {
     this.anim2 = true;
     setTimeout(() => {
       this.visibility = 'hidden';
-    }, 4000);
+    }, 3000);
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter, Injector } from '@angular/core';
 import { Http, XHRBackend, ConnectionBackend, RequestOptions, RequestOptionsArgs, Response, Request } from '@angular/http';
 import { Router } from '@angular/router';
-import { Observable, Observer } from 'rxjs';
+import { Observable, Observer, Subscription } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Ng2HttpLoaderEmitter } from './ng2-http-loader-emitter';
@@ -22,8 +22,11 @@ export class Ng2Http extends Http {
   get(url: string, options?: RequestOptionsArgs): Observable<any> {
     return Observable.create((observer: Observer<any>) => {
       this.onRequest();
-      super.get((url), options)
-      .subscribe(res => {
+      let subscribe: Subscription = super.get((url), options).map(res => {
+        this.onRequestEnd();
+        return res;
+      }).subscribe(res => {
+        subscribe.unsubscribe();
         observer.next(res);
         observer.complete();
       });
@@ -33,10 +36,11 @@ export class Ng2Http extends Http {
   post(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
     return Observable.create((observer: Observer<any>) => {
       this.onRequest();
-      super.post(url, body, options).map(res => {
+      let subscribe: Subscription = super.post(url, body, options).map(res => {
         this.onRequestEnd();
         return res;
       }).subscribe(res => {
+        subscribe.unsubscribe();
         observer.next(res);
         observer.complete();
       });
@@ -46,10 +50,11 @@ export class Ng2Http extends Http {
   put(url: string, body: string, options?: RequestOptionsArgs): Observable<any> {
     return Observable.create((observer: Observer<any>) => {
       this.onRequest();
-      super.put(url, body, options).map(res => {
+      let subscribe: Subscription = super.put(url, body, options).map(res => {
         this.onRequestEnd();
         return res;
       }).subscribe(res => {
+        subscribe.unsubscribe();
         observer.next(res);
         observer.complete();
       });
@@ -59,10 +64,11 @@ export class Ng2Http extends Http {
   delete(url: string, options?: RequestOptionsArgs): Observable<any> {
     return Observable.create((observer: Observer<any>) => {
       this.onRequest();
-      super.delete(url, options).map(res => {
+      let subscribe: Subscription = super.delete(url, options).map(res => {
       this.onRequestEnd();
       return res;
       }).subscribe(res => {
+        subscribe.unsubscribe();
         observer.next(res);
         observer.complete();
       });
