@@ -1,5 +1,9 @@
 # Ng2-Http-Loader
 
+The idea is simple: Add a loading bar / progress bar whenever an XHR request goes out in angular2.  Multiple requests within the same time period get bundled together such that each response increments the progress bar by the appropriate amount.
+
+This is mostly cool because you simply include it in your app, and it works.  There's no complicated setup, and no need to maintain the state of the loading bar; it's all handled automatically by the interceptor.
+
 ## ng2-http-loader [![Angular 2 Style Guide](https://mgechev.github.io/angular2-style-guide/images/badge.svg)](https://github.com/mgechev/angular2-style-guide)
 
 Follow me [![twitter](https://img.shields.io/twitter/follow/babarxm.svg?style=social&label=%20babarxm)](https://twitter.com/babarxm) to be notified about new releases.
@@ -19,15 +23,14 @@ Follow me [![twitter](https://img.shields.io/twitter/follow/babarxm.svg?style=so
     export class AppModule { }
 
 ### Step 2
-#### You can apply color for loading bar as well
+#### Put it on the top of your root component.
     @Component({
       selector: `app-demo`,
       templateUrl: `<ng2-http-loader [color]="color"></ng2-http-loader>`
     })
 
-    export class DemoComponent{
+    export class AppComponent{
       color = '#00f';
-      constructor(): void { }
     }
 
 ### If you are going to use custom interceptor in your app.
