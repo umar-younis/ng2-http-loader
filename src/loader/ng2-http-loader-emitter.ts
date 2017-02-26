@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from "@angular/core";
 
 @Injectable()
-export class Ng2Emitter {
+export class Ng2HttpLoaderEmitter {
   private emitter: EventEmitter<any>;
   constructor(){
     this.emitter = new EventEmitter<any>();

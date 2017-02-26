@@ -7,8 +7,8 @@ Follow me [![twitter](https://img.shields.io/twitter/follow/babarxm.svg?style=so
 ## Setup
 `npm install ng2-http-loader --save`
 
-## Properties and methods
-  - `prop/method` description.
+## Inputs
+  - `color` sets the color of loader.
 
 ## Configuration
 ### Step 1
@@ -19,17 +19,30 @@ Follow me [![twitter](https://img.shields.io/twitter/follow/babarxm.svg?style=so
     export class AppModule { }
 
 ### Step 2
+#### You can apply color for loading bar as well
     @Component({
-      selector: 'app-demo',
-      templateUrl: '<ng2-http-loader></ng2-http-loader>'
+      selector: `app-demo`,
+      templateUrl: `<ng2-http-loader [color]="color"></ng2-http-loader>`
     })
 
     export class DemoComponent{
+      color = '#00f';
       constructor(): void { }
+    }
+
+### If you are going to use custom interceptor in your app.
+    import { Ng2Http } from 'ng2-http-loader';
+    @Injectable()
+    export class HttpInterceptor extends Ng2Http {
+      constructor(backend: ConnectionBackend,defaultOptions: RequestOptions, injector: Injector) {
+        super(backend, defaultOptions, injector);
+      }
+      // setup your custom interceptor...
     }
 
 ## TODO
   - Demo 
+  - Unit tests
 
 ## Troubleshooting
 

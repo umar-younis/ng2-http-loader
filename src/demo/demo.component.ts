@@ -7,11 +7,22 @@ import { Http } from '@angular/http';
 })
 
 export class DemoComponent implements OnInit{
-  constructor(private http: Http): void { }
+
+  counter: number = 0;
+  bgcolor: string = '#00f';
+  constructor(private http: Http) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3001').subscribe(asd => {
+    this.sendReq();
+    
+    setInterval(() => {
+      if (this.counter++ < 3) {
+        this.sendReq();
+      }
+    }, 2000);
+  }
 
-    });
+  sendReq(): void {
+    this.http.get('http://localhost:3001').subscribe();
   }
 }
